@@ -1,0 +1,158 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-02T15:40:53.552Z",
+    "end": "2026-02-02T15:40:55.593Z",
+    "duration": 2041,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "54b3743a-f5d9-4938-b6ab-1394aed98053",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "98d79cf5-3dac-4603-8c15-f1f2c451f4ef",
+          "title": "Positive NeoWs API tests",
+          "fullFile": "/Users/natalia/projects_2025/api-test-nasa/test/nasa.tests.js",
+          "file": "/test/nasa.tests.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Search asteroid by id",
+              "fullTitle": "Positive NeoWs API tests Search asteroid by id",
+              "timedOut": false,
+              "duration": 1255,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const result = await api.get(`/${asteroidId}`);\nexpect(result.status).to.equal(200);\nexpect(result.data).to.have.property(\"id\");\nexpect(result.data.id).to.equal(asteroidId);",
+              "err": {},
+              "uuid": "637972a7-f699-4713-a478-5a5c14e8d93d",
+              "parentUUID": "98d79cf5-3dac-4603-8c15-f1f2c451f4ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Expected fields",
+              "fullTitle": "Positive NeoWs API tests Expected fields",
+              "timedOut": false,
+              "duration": 386,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const result = await api.get(`/${asteroidId}`);\nexpect(result.data).to.include.keys(expectedFields);",
+              "err": {},
+              "uuid": "81413194-1e8b-497c-93f5-45e9b2712b21",
+              "parentUUID": "98d79cf5-3dac-4603-8c15-f1f2c451f4ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "637972a7-f699-4713-a478-5a5c14e8d93d",
+            "81413194-1e8b-497c-93f5-45e9b2712b21"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1641,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "08cce9aa-106f-4ca4-818c-e67e80315128",
+          "title": "Negative NeoWs API tests",
+          "fullFile": "/Users/natalia/projects_2025/api-test-nasa/test/nasa.tests.js",
+          "file": "/test/nasa.tests.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Error 404 for non existed asteroid id",
+              "fullTitle": "Negative NeoWs API tests Error 404 for non existed asteroid id",
+              "timedOut": false,
+              "duration": 393,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try{\n    await api.get(\"/1111111\");\n    throw new Error(\"Expected 404 error. Asteroid is not found\");\n} catch (error) {\n    expect(error.response.status).to.equal(404); \n}",
+              "err": {},
+              "uuid": "17e445e1-3ca3-4c1c-9e4e-b92def00e0f0",
+              "parentUUID": "08cce9aa-106f-4ca4-818c-e67e80315128",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "17e445e1-3ca3-4c1c-9e4e-b92def00e0f0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 393,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
